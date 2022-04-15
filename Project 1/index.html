@@ -8,9 +8,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Matches</h1>
-    <input type="date" name="" value="">
-    <button type="button" name="button">Get Games</button>
+    <section class = 'leagueSelect'>
+        <label for="leagues">Choose a League:</label>
+        <select name="leaguesEurope" id="leagues">
+            <option value="premierLeague">Premier League</option>
+              <option value="laLiga">La Liga</option> 
+            <option value="serieA">Serie A</option>
+            <option value="bundesliga">Bundesliga</option>
+            <option value="ligueUn">Ligue 1</option>
+            <option value="eredivisie">Eredivisie</option>
+        </select>
+
+        <label for="seasons">Choose a Season:</label>
+        <select name="leagueSeasons" id="seasons">
+            <option value="2021">2020/21</option>
+            <option value="2020">2019/20</option> 
+            <option value="2019">2018/19</option>
+            <option value="2018">2017/18</option>
+        </select>
+        <button type="button" name="button">Enter</button>
+    </section>
 
     <section>
 
