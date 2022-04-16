@@ -2,15 +2,18 @@
 
 //event listener once enter button clicked 
 document.querySelector('button').addEventListener('click', MatchWeekStandings);
+document.querySelector('button').addEventListener('click', seasonStandings)
+
 
 //standings function 
 function MatchWeekStandings (){
 //set parameters for the selected league value and your API Key
     let leagueID = document.querySelector('#leagues').value;
+    let seasonID = document.querySelector('#seasons').value;
     console.log(leagueID);
+    console.log(seasonID)
     const apiKey = 'b92d196605de488f95dd6dfb7196421e'
-    let leagueInt = '2021';
-// returned value to be included in the Fetch api for each league  - Note: La Liga, Ligue 1, Bundesliga, Serie A missing - followed up with develop for league IDs 
+    let leagueInt = `${seasonID}`;
 
     if(leagueID === 'eredivisie'){
         leagueInt = '2003';
@@ -36,7 +39,7 @@ function MatchWeekStandings (){
 
     // Fetch request 
 
-    fetch(`http://api.football-data.org/v2/competitions/${leagueInt}/standings`,{
+    fetch(`http://api.football-data.org/v2/competitions//${seasonID}/standings`,{
         headers: {'X-Auth-Token': `${apiKey}`},
         dataType: 'json',
         type: 'GET',
